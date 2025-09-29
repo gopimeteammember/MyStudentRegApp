@@ -1,0 +1,19 @@
+/* Container for the form to center it and set a max width */
+mat-card {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Make form fields take full width of the container */
+mat-form-field {
+    width: 100%;
+    margin-bottom: 15px; /* Add some space between fields */
+    display: block; /* Ensure it behaves like a block element */
+}
+
+/* Style for the submit button */
+button[type="submit"] {
+    margin-top: 20px;
+    width: 100%;
+}
