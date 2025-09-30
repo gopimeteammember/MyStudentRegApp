@@ -6,7 +6,7 @@ const { Pool } = require('pg'); // PostgreSQL client
 const cors = require('cors');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.port || 3000;
 
 // Middleware
 app.use(express.json()); // To parse JSON bodies from Angular
@@ -34,7 +34,7 @@ pool.connect()
 
 
 // 3. API Route to Handle Registration (POST /api/students)
-app.post('/api/students', async (req, res) => {
+app.post('/api/student', async (req, res) => {
     // Data sent from the Angular form (reg-form.component.ts)
     const { firstName, lastName, email, course } = req.body; 
 
