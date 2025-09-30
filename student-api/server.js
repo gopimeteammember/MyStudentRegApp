@@ -12,7 +12,7 @@ const port = process.env.port || 3000;
 app.use(express.json()); // To parse JSON bodies from Angular
 // Configure CORS to allow requests from your Angular application's origin
 app.use(cors({
-    origin: 'http://localhost:4200' // <-- Adjust if your Angular app runs on a different port/host
+    origin: ['http://localhost:4200', 'https://studregapp.vercel.app'] // <-- Adjust if your Angular app runs on a different port/host
 }));
 
 // 2. PostgreSQL Connection Pool Setup
