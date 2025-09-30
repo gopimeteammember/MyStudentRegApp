@@ -1,15 +1,20 @@
+// vercel.json (place this file in the root directory of your project)
 {
   "version": 2,
   "builds": [
     {
-      "src": "server.js",
+      "src": "student-api/server.js",
       "use": "@vercel/node"
     }
   ],
   "rewrites": [
     {
+      "source": "/api/student",
+      "destination": "/student-api/server.js"
+    },
+    {
       "source": "/api/(.*)",
-      "destination": "/server.js"
+      "destination": "/student-api/server.js"
     }
   ]
 }
