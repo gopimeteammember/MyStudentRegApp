@@ -1,4 +1,3 @@
-// vercel.json (place this file in the root directory of your project)
 {
   "version": 2,
   "builds": [
