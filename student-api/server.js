@@ -6,13 +6,13 @@ const { Pool } = require('pg'); // PostgreSQL client
 const cors = require('cors');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.port || 3000;
 
 // Middleware
 app.use(express.json()); // To parse JSON bodies from Angular
 // Configure CORS to allow requests from your Angular application's origin
 app.use(cors({
-    origin: 'http://localhost:4200' // <-- Adjust if your Angular app runs on a different port/host
+    origin: ['http://localhost:4200', 'https://studregapp.vercel.app'] // <-- Adjust if your Angular app runs on a different port/host
 }));
 
 // 2. PostgreSQL Connection Pool Setup
@@ -34,7 +34,7 @@ pool.connect()
 
 
 // 3. API Route to Handle Registration (POST /api/students)
-app.post('/api/students', async (req, res) => {
+app.post('/api/student', async (req, res) => {
     // Data sent from the Angular form (reg-form.component.ts)
     const { firstName, lastName, email, course } = req.body; 
 
