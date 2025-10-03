@@ -1,4 +1,4 @@
-import { Component, effect, inject, NgModule, OnInit, signal } from '@angular/core';
+import { Component, computed, effect, inject, NgModule, OnInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClient, HttpClientModule } from '@angular/common/http'; // <-- 1. Import HttpClientModule
@@ -6,7 +6,7 @@ import { StudentForm } from './reg-form/reg-form';
 import { CommonModule, DatePipe, NgClass } from '@angular/common';
 
 import { RawStudentData, MyStudent, Student,mapRawStudent } from './student';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { take, map } from 'rxjs';
 
 @Component({
@@ -152,6 +152,7 @@ export class StudentDashboard implements OnInit {
   protected readonly title = signal('Stud_Reg_App');
   private studentService = inject(Student);
 
+  
   // --- Master State Signals ---
   students = signal<MyStudent[]>([]);
   isLoading = signal(true);
@@ -276,4 +277,7 @@ export class StudentDashboard implements OnInit {
     });
   }
 }
+
+
+
 
