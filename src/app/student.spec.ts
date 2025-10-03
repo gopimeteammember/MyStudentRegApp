@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { Student } from './student';
 
 describe('Student', () => {
